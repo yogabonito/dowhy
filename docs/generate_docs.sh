@@ -14,6 +14,8 @@ poetry run sphinx-multiversion source ${OUTPUT_DIR}
 mv source/conf.py.orig source/conf.py
 cp source/_templates/versions-pydata.html source/_templates/versions.html
 
+exit 0
+
 poetry run sphinx-multiversion --dump-metadata source ${OUTPUT_DIR}
 poetry run sphinx-multiversion source ${OUTPUT_DIR}
 

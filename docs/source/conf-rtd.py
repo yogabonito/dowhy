@@ -80,6 +80,42 @@ exclude_patterns = [
     "example_notebooks/dowhy_optimize_backdoor_example.ipynb",  # need to check why str_to_dot fails here
     "example_notebooks/dowhy_causal_discovery_example.ipynb",  # need to check why str_to_dot fails here
     "example_notebooks/dowhy_twins_example.ipynb",
+    "example_notebooks/DoWhy-The Causal Story Behind Hotel Booking Cancellations.ipynb",
+    "example_notebooks/do_sampler_demo.ipynb",
+    "example_notebooks/dowhy-conditional-treatment-effects.ipynb",
+    "example_notebooks/dowhy-simple-iv-example.ipynb",
+    "example_notebooks/dowhy_causal_api.ipynb",
+    "example_notebooks/dowhy_causal_discovery_example.ipynb",
+    "example_notebooks/dowhy_confounder_example.ipynb",
+    "example_notebooks/dowhy_demo_dummy_outcome_refuter.ipynb",
+    "example_notebooks/dowhy_efficient_backdoor_example.ipynb",
+    "example_notebooks/dowhy_estimation_methods.ipynb",
+    "example_notebooks/dowhy_example_effect_of_memberrewards_program.ipynb",
+    "example_notebooks/dowhy_functional_api.ipynb",
+    "example_notebooks/dowhy_ihdp_data_example.ipynb",
+    "example_notebooks/dowhy_interpreter.ipynb",
+    "example_notebooks/dowhy_lalonde_example.ipynb",
+    "example_notebooks/dowhy_mediation_analysis.ipynb",
+    "example_notebooks/dowhy_multiple_treatments.ipynb",
+    "example_notebooks/dowhy_optimize_backdoor_example.ipynb",
+    "example_notebooks/dowhy_ranking_methods.ipynb",
+    "example_notebooks/dowhy_refutation_testing.ipynb",
+    "example_notebooks/dowhy_refuter_notebook.ipynb",
+    "example_notebooks/dowhy_simple_example.ipynb",
+    "example_notebooks/dowhy_twins_example.ipynb",
+    "example_notebooks/gcm_401k_analysis.ipynb",
+    "example_notebooks/gcm_basic_example.ipynb",
+    "example_notebooks/gcm_counterfactual_medical_dry_eyes.ipynb",
+    "example_notebooks/gcm_draw_samples.ipynb",
+    "example_notebooks/gcm_rca_microservice_architecture.ipynb",
+    "example_notebooks/gcm_supply_chain_dist_change.ipynb",
+    "example_notebooks/graph_conditional_independence_refuter.ipynb",
+    "example_notebooks/identifying_effects_using_id_algorithm.ipynb",
+    "example_notebooks/lalonde_pandas_api.ipynb",
+    "example_notebooks/load_graph_example.ipynb",
+    "example_notebooks/sensitivity_analysis_nonparametric_estimators.ipynb",
+    "example_notebooks/tutorial-causalinference-machinelearning-using-dowhy-econml.ipynb",
+    "example_notebooks/rca_microservice_architecture.ipynb"
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
@@ -196,6 +232,6 @@ todo_include_todos = True
 # init docstrings should also be included in class
 autoclass_content = "both"
 
-smv_tag_whitelist = r"^v0\.[0-8](\..*)?$"
+smv_tag_whitelist = r"^v0\.8(\..*)?$"
 smv_branch_whitelist = None
 smv_released_pattern = r"refs/tags/v.*"
