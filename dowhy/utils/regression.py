@@ -1,5 +1,4 @@
 import numpy as np
-from econml.sklearn_extensions.model_selection import GridSearchCVList
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
 from sklearn.linear_model import Lasso
@@ -39,6 +38,7 @@ def get_generic_regressor(
 
     :returns: estimator for Reisz Regression function
     """
+    from econml.sklearn_extensions.model_selection import GridSearchCVList
     if estimator_list is not None:
         estimator = GridSearchCVList(
             estimator_list, estimator_param_list, cv=cv, scoring="neg_mean_squared_error", n_jobs=-1

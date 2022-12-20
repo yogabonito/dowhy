@@ -1,7 +1,4 @@
 import numpy as np
-from econml.grf._base_grf import BaseGRF
-from econml.sklearn_extensions.model_selection import GridSearchCVList
-from econml.utilities import cross_product
 from scipy import stats
 from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.ensemble import (
@@ -76,6 +73,9 @@ def get_alpha_estimator(
                     "max_depth": [5, None],
                 }
             ]
+        from econml.sklearn_extensions.model_selection import GridSearchCVList
+        from econml.grf._base_grf import BaseGRF
+
         estimator = GridSearchCVList(
             [
                 ReiszRepresenter(
@@ -202,19 +202,6 @@ class ReiszRepresenter(BaseGRF):
             verbose=verbose,
             warm_start=warm_start,
         )
-
-    def _get_alpha_and_pointJ(self, X, T, y):
-        n_riesz_feats = len(self.reisz_functions)
-        TX = np.hstack([T, X])
-        riesz_feats = np.hstack([feat_fn(TX) for feat_fn in self.reisz_functions])
-        mfeats = np.hstack([self.moment_function(TX, feat_fn) for feat_fn in self.reisz_functions])
-        alpha = np.zeros((X.shape[0], n_riesz_feats))
-        alpha[:, :n_riesz_feats] = mfeats
-        riesz_cov_matrix = cross_product(riesz_feats, riesz_feats).reshape((X.shape[0], n_riesz_feats, n_riesz_feats))
-        penalty = self.l2_regularizer * np.eye(n_riesz_feats)
-        penalty[0, 0] = 0
-        pointJ = riesz_cov_matrix + penalty
-        return alpha, pointJ.reshape((X.shape[0], -1))
 
     def _get_n_outputs_decomposition(self, X, T, y):
         n_relevant_outputs = len(self.reisz_functions)

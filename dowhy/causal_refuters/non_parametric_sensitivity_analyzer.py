@@ -11,7 +11,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from dowhy.causal_refuters.partial_linear_sensitivity_analyzer import PartialLinearSensitivityAnalyzer
-from dowhy.causal_refuters.reisz import get_alpha_estimator
 from dowhy.utils.regression import generate_moment_function, get_generic_regressor, get_numeric_features
 
 
@@ -122,6 +121,7 @@ class NonParametricSensitivityAnalyzer(PartialLinearSensitivityAnalyzer):
             estimator_param_list=self.g_s_estimator_param_list,
             numeric_features=numeric_features,
         )
+        from dowhy.causal_refuters.reisz import get_alpha_estimator
         reisz_function = get_alpha_estimator(
             cv=split_indices,
             X=X,
